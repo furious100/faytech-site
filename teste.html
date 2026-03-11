@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FayTech Soluções — Controle de Acesso & Automação</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Instalação, manutenção e suporte em catracas, leitores biométricos e sistemas de controle de acesso para academias e empresas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111831;
+      --pri:#5b7cff;
+      --sec:#22c55e;
+      --txt:#e6e9f2;
+      --mut:#aab0c0;
+      --danger:#ef4444;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 80% -10%, #1b2a6b33, transparent), var(--bg); color:var(--txt)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;background:linear-gradient(135deg,var(--pri),#7aa2ff); color:white;font-weight:700;border:none;cursor:pointer;box-shadow:0 10px 30px #5b7cff44}
+    .btn.secondary{background:transparent;border:1px solid #2a3566;color:var(--txt);box-shadow:none}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#1b2450;color:#c7d2fe;font-weight:600;font-size:12px}
+    header{position:sticky;top:0;backdrop-filter: blur(10px); background:linear-gradient(180deg, #0b1020cc, #0b102099); border-bottom:1px solid #1b2450; z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .logo .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#5b7cff,#22c55e);display:grid;place-items:center;color:#0b1020;font-weight:900}
+    .nav a{opacity:.9}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
+    .hero h1{font-size:42px;line-height:1.1;margin:10px 0}
+    .hero p{color:var(--mut);font-size:18px}
+    .card{background:linear-gradient(180deg, #0f1733, #0c1228); border:1px solid #1b2450; border-radius:24px; padding:22px; box-shadow:0 20px 50px #00000055}
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .kpi{display:flex;gap:14px;align-items:center}
+    .kpi .dot{width:10px;height:10px;border-radius:50%;background:var(--sec)}
+    section{padding:48px 0}
+    h2{font-size:32px;margin:0 0 12px}
+    .muted{color:var(--mut)}
+    .service{display:flex;gap:14px}
+    .icon{width:40px;height:40px;border-radius:12px;background:#1b2450;display:grid;place-items:center;color:#a5b4fc}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#0f1733;border:1px solid #1b2450}
+    .cta{display:flex;flex-wrap:wrap;gap:12px}
+    footer{border-top:1px solid #1b2450;padding:28px 0;color:var(--mut)}
+    .form{display:grid;gap:12px}
+    input, textarea{background:#0f1733;border:1px solid #1b2450;border-radius:12px;color:var(--txt);padding:12px}
+    input::placeholder, textarea::placeholder{color:#8b92a8}
+    .toast{position:fixed;right:20px;bottom:20px;background:#0f1733;border:1px solid #1b2450;border-radius:14px;padding:14px 16px;display:none}
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+      .hero h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+        <div class="logo">
+            <img src="logo.png" alt="FitTech System" style="width:36px;height:36px;border-radius:10px" />
+            <span>FayTech & Soluções</span>
+        </div>
+      <nav style="display:flex;gap:14px">
+        <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#contato" class="pill">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">Controle de Acesso & Automação</span>
+        <h1>Mais segurança, menos dor de cabeça.<br/>Instalação, suporte e manutenção.</h1>
+        <p>Foco em Condomínios, Residencias e academias. Instalação limpa com software pronta entrega. Periféricos como faciais e biometria.</p>
+        <div class="cta">
+          <a class="btn" id="btnWhats" href="#contato">Chamar no WhatsApp</a>
+          <a class="btn secondary" href="#servicos">Ver serviços</a>
+        </div>
+        <div style="display:flex;gap:18px;margin-top:18px;flex-wrap:wrap">
+          <div class="kpi"><div class="dot"></div><span class="muted">Suporte especializado</span></div>
+          <div class="kpi"><div class="dot"></div><span class="muted">Foco em acesso</span></div>
+          <div class="kpi"><div class="dot"></div><span class="muted">Atendimento rápido</span></div>
+          <div class="kpi"><div class="dot"></div><span class="muted">Remoto ou Presencial</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>O que resolvemos?</h3>
+        <div class="grid cols-2" style="margin-top:12px">
+          <div class="service"><div class="icon">🔧</div><div><strong>Catraca travando</strong><div class="muted">Diagnóstico e correção</div></div></div>
+          <div class="service"><div class="icon">🧠</div><div><strong>Biometria falhando</strong><div class="muted">Cadastro e ajustes</div></div></div>
+          <div class="service"><div class="icon">🖥️</div><div><strong>Computadores</strong><div class="muted">Configuração e integração</div></div></div>
+          <div class="service"><div class="icon">🔌</div><div><strong>Comunicação</strong><div class="muted">Rede/porta serial/IP</div></div></div>
+          <div class="service"><div class="icon">🔐</div><div><strong>Fechaduras</strong><div class="muted">Automação e controle</div></div></div>
+          <div class="service"><div class="icon">⚙</div><div><strong>Soluções ágeis</strong><div class="muted">Baterias, Botoeiras emergenciais</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <p class="muted">Você contrata exatamente o que precisa. Instalações físicas sob consulta.</p>
+      <div class="grid cols-3">
+        <div class="card"><h3>Suporte técnico</h3><p class="muted">Correção de falhas, travamentos, ajustes e orientação.</p></div>
+        <div class="card"><h3>Configuração de sistema</h3><p class="muted">Integração com software de academia e permissões.</p></div>
+        <div class="card"><h3>Leitores biométricos</h3><p class="muted">Cadastro, calibração e solução de erros.</p></div>
+        <div class="card"><h3>Manutenção preventiva</h3><p class="muted">Evite paradas e filas na recepção.</p></div>
+        <div class="card"><h3>Catracas</h3><p class="muted">Ajustes, diagnóstico e suporte em campo.</p></div>
+        <div class="card"><h3>Instalação</h3><p class="muted">Projeto e execução com parceiro técnico (sob consulta).</p></div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <h2>Como funciona</h2>
+      <div class="grid cols-3">
+        <div class="card"><strong>1. Contato</strong><p class="muted">Você chama no WhatsApp e descreve o problema.</p></div>
+        <div class="card"><strong>2. Diagnóstico</strong><p class="muted">Avaliamos remoto ou presencialmente.</p></div>
+        <div class="card"><strong>3. Solução</strong><p class="muted">Aplicamos o ajuste, correção ou combinamos a instalação.</p></div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <p class="muted">Prefere falar direto? Clique no botão abaixo.</p>
+          <a class="btn" id="btnWhats2" href="#">Abrir WhatsApp</a>
+          <a class="btn secondary" href="https://www.instagram.com/faytechsolucoes/" target="_blank">Abrir Instagram</a>
+          <p class="muted" style="margin-top:12px">Ou deixe uma mensagem:</p>
+          <form class="form" id="leadForm">
+            <input required placeholder="Seu nome" id="nome" />
+            <input required placeholder="Telefone / WhatsApp" id="fone" />
+            <textarea rows="4" placeholder="Descreva seu problema"></textarea>
+            <button class="btn" type="submit">Enviar</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Área de atendimento</h3>
+          <p class="muted">Atendimento local e remoto. Nota fiscal mediante solicitação.</p>
+          <p class="muted">
+📧 <a href="mailto:faytechsolucoes@gmail.com">faytechsolucoes@gmail.com</a></p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <span class="pill">Academias</span>
+            <span class="pill">Empresas</span>
+            <span class="pill">Condomínios</span>
+            <span class="pill">Residências</span>
+            <span class="pill">Clubes</span>
+            <span class="pill">Centro esportivo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">©  <span id="year"></span> FayTeck — Todos os direitos reservados.</div>
+    <div class="container">CNPJ:  <span id="year"></span>64.892.285/0001-03</div>
+  </footer>
+
+  <div class="toast" id="toast">Mensagem enviada! Vamos falar no WhatsApp 😉</div>
+
+  <script>
+    const WHATS_NUMBER = "5571982860054"; // <-- TROQUE para seu número com DDI (55) e DDD
+    const DEFAULT_TEXT = encodeURIComponent("Olá, preciso de suporte!");
+
+    const waLink = `https://wa.me/${WHATS_NUMBER}?text=${DEFAULT_TEXT}`;
+    document.getElementById('btnWhats').href = waLink;
+    document.getElementById('btnWhats2').href = waLink;
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('leadForm');
+    const toast = document.getElementById('toast');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const fone = document.getElementById('fone').value;
+      const msg = encodeURIComponent(`Olá! Meu nome é ${nome}. Meu contato é ${fone}. Gostaria de ajuda com controle de acesso.`);
+      window.open(`https://wa.me/${WHATS_NUMBER}?text=${msg}`, '_blank');
+      toast.style.display = 'block';
+      setTimeout(()=> toast.style.display = 'none', 3000);
+      form.reset();
+    });
+  </script>
+</body>
+</html>
